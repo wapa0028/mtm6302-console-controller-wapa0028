@@ -1,8 +1,15 @@
-let $light = document.getElementById('light')
+const toggle = document.getElementById('toggleDark');
+const body = document.querySelector('body');
 
-function power () {
-    $light.classList.toggle('light')
-    $light.classList.toggle('dark')
-}
-
- 
+toggle.addEventListener('click', function(){
+    this.classList.toggle('bi-brightness-low-fill');
+    if(this.classList.toggle('bi-brightness-high')){
+        body.style.background = 'white';
+        body.style.transition = '1s';
+        body.style.color = 'black';
+    }else{
+        body.style.background = 'black';
+        body.style.transition = '1s';
+        body.style.color = 'white';
+    }
+})
